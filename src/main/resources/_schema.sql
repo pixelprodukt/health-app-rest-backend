@@ -38,7 +38,7 @@ create table allergies (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     PRIMARY KEY (id),
-    constraint fk_user_id foreign key (user_id) references users(id) ON DELETE CASCADE
+    constraint fk_user_id2 foreign key (user_id) references users(id) ON DELETE CASCADE
 );
 
 create table intake_types (
@@ -70,6 +70,6 @@ create table medication_plans (
     comment varchar(600),
     reason varchar(100),
     PRIMARY KEY (id),
-    constraint fk_user_id foreign key (user_id) references users(id) ON DELETE CASCADE,
+    constraint fk_user_id3 foreign key (user_id) references users(id) ON DELETE CASCADE,
     CONSTRAINT fk_intake_type_id FOREIGN KEY (intake_type_id) REFERENCES intake_types(id) ON DELETE CASCADE
 );
